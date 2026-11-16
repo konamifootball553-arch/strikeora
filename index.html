@@ -1,0 +1,647 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>STRIKE ORA - Premium Gaming Platform</title>
+
+<link rel="icon" href="https://i.postimg.cc/3RKVptdN/file-00000000c96482089d39f95d3d14c166.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+:root {
+    --blue: #2563eb;
+    --dark: #1e40af;
+    --text: #0f172a;
+    --muted: #475569;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg,#f8fafc,#eef2ff);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 20px 16px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Header */
+
+.header {
+    text-align: center;
+    margin: 20px 0 35px;
+    width: 100%;
+    animation: fadeDown .8s ease;
+}
+
+/* Top Logo */
+
+.logo-box {
+    width: 115px;
+    height: 115px;
+    border-radius: 30px;
+    overflow: hidden;
+    margin: 0 auto 18px;
+    background: white;
+    box-shadow: 0 15px 35px #00000015;
+    border: 2px solid #dbeafe;
+    animation: logoFloat 3s infinite ease-in-out;
+}
+
+.logo-box img,
+.footer-logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.subtitle-sm {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 5px;
+}
+
+.main-title {
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(90deg,#1e40af,#3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #334155;
+}
+
+/* Download Buttons */
+
+.download-btn,
+.final-cta-btn {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(95deg,#2563eb,#1e40af);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    max-width: 350px;
+    width: 100%;
+    margin: 28px auto 15px;
+    box-shadow: 0 12px 25px #2563eb40;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.download-btn:hover,
+.final-cta-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 30px #2563eb55;
+}
+
+.download-btn:active,
+.final-cta-btn:active {
+    transform: scale(.96);
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: #ffffff70;
+    transform: scale(0);
+    animation: ripple .6s linear;
+    pointer-events: none;
+}
+
+/* Statistics */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 16px;
+    width: 100%;
+    max-width: 430px;
+    margin-bottom: 35px;
+}
+
+.card {
+    background: white;
+    border-radius: 25px;
+    padding: 22px 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px #00000009;
+    border: 1px solid #e2e8f0;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.icon-bg {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    margin: 0 auto 12px;
+    background: #eff6ff;
+    color: var(--blue);
+}
+
+.card-2 .icon-bg {
+    background:#ecfdf5;
+    color:#059669;
+}
+
+.card-3 .icon-bg {
+    background:#f5f3ff;
+    color:#7c3aed;
+}
+
+.card-4 .icon-bg {
+    background:#fff7ed;
+    color:#ea580c;
+}
+
+.card h3 {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.card p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* Features */
+
+.features-section {
+    width: 100%;
+    max-width: 450px;
+}
+
+.features-header {
+    text-align: center;
+    margin: 20px 0 30px;
+}
+
+.features-header h2 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.features-header p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    margin-bottom: 18px;
+    box-shadow: 0 10px 30px #00000009;
+    border: 1px solid #e2e8f0;
+    transition: .3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-large {
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 16px;
+    background: #eff6ff;
+    color: var(--blue);
+}
+
+.card-deposit .icon-large {
+    background:#fef2f2;
+    color:#dc2626;
+}
+
+.card-withdraw .icon-large {
+    background:#ecfdf5;
+    color:#059669;
+}
+
+.card-secure .icon-large {
+    background:#eff6ff;
+    color:#2563eb;
+}
+
+.card-rewards .icon-large {
+    background:#fefce8;
+    color:#ca8a04;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Final CTA */
+
+.final-cta-text {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 700;
+    margin: 30px 0 15px;
+}
+
+.final-cta-btn {
+    margin: 0 auto 40px;
+}
+
+/* Footer */
+
+.footer {
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    margin-top: 25px;
+    padding: 25px 15px;
+    background: #ffffffaa;
+    border-radius: 30px;
+}
+
+/* Footer Logo - Same Ring Design */
+
+.footer-logo-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 20px;
+}
+
+.footer-logo-box {
+    width: 65px;
+    height: 65px;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 2px solid #dbeafe;
+    background: white;
+    box-shadow: 0 8px 20px #2563eb30;
+    animation: logoFloat 3s infinite ease-in-out;
+    flex-shrink: 0;
+}
+
+.app-name {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--blue);
+}
+
+.copyright-text {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 18px;
+    margin-top: 15px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.copyright-text a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Scroll Animation */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animations */
+
+@keyframes fadeDown {
+    from {
+        opacity:0;
+        transform:translateY(-25px);
+    }
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes logoFloat {
+    0%,100% {
+        transform:translateY(0);
+    }
+    50% {
+        transform:translateY(-7px);
+    }
+}
+
+@keyframes ripple {
+    to {
+        transform:scale(3);
+        opacity:0;
+    }
+}
+
+/* Mobile Responsive */
+
+@media(max-width:480px) {
+    .main-title {
+        font-size:27px;
+    }
+
+    .card {
+        padding:18px 8px;
+    }
+
+    .feature-card {
+        padding:22px 18px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration:0.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:0.01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+
+<header class="header">
+
+    <div class="logo-box">
+        <img src="https://i.postimg.cc/3RKVptdN/file-00000000c96482089d39f95d3d14c166.png"
+             alt="STRIKE ORA Logo">
+    </div>
+
+    <p class="subtitle-sm">বাংলাদেশের গেমিং প্ল্যাটফর্ম</p>
+
+    <h1 class="main-title">STRIKE ORA</h1>
+
+    <div class="tagline">
+        🎮 খেলুন • 🏆 জিতুন • ⚡ উপভোগ করুন
+    </div>
+
+    <a href="https://www.mediafire.com/file/d1igojibcotcz6u/STRIKE_ORA.apk/file"
+       class="download-btn"
+       target="_blank"
+       rel="noopener noreferrer">
+
+        <i class="fa-solid fa-download"></i>
+        অ্যাপ ডাউনলোড করুন (APK)
+
+    </a>
+
+</header>
+
+<!-- Statistics -->
+
+<div class="stats-grid">
+
+    <div class="card card-1 reveal">
+        <div class="icon-bg">
+            <i class="fa-solid fa-download"></i>
+        </div>
+        <h3>৩০K+</h3>
+        <p>সফল ডাউনলোড</p>
+    </div>
+
+    <div class="card card-2 reveal">
+        <div class="icon-bg">
+            <i class="fa-solid fa-users"></i>
+        </div>
+        <h3>১০K+</h3>
+        <p>সক্রিয় খেলোয়াড়</p>
+    </div>
+
+    <div class="card card-3 reveal">
+        <div class="icon-bg">
+            <i class="fa-regular fa-clock"></i>
+        </div>
+        <h3>২৪/৭</h3>
+        <p>সাপোর্ট টিম</p>
+    </div>
+
+    <div class="card card-4 reveal">
+        <div class="icon-bg">
+            <i class="fa-solid fa-gamepad"></i>
+        </div>
+        <h3>৬+</h3>
+        <p>এক্সক্লুসিভ গেম</p>
+    </div>
+
+</div>
+
+<!-- Features -->
+
+<section class="features-section">
+
+    <div class="features-header reveal">
+        <h2>✨ কেন বেছে নেবেন আমাদের?</h2>
+        <p>সহজ, সুন্দর ও আধুনিক গেমিং প্ল্যাটফর্ম</p>
+    </div>
+
+    <div class="feature-card card-deposit reveal">
+        <div class="icon-large">
+            <i class="fa-regular fa-credit-card"></i>
+        </div>
+        <h3>সহজ ডিপোজিট</h3>
+        <p>সহজ পেমেন্ট পদ্ধতির মাধ্যমে আপনার অ্যাকাউন্টে ব্যালেন্স যোগ করুন।</p>
+    </div>
+
+    <div class="feature-card card-withdraw reveal">
+        <div class="icon-large">
+            <i class="fa-solid fa-wallet"></i>
+        </div>
+        <h3>উইথড্র সুবিধা</h3>
+        <p>আপনার প্রযোজ্য ব্যালেন্স উত্তোলনের জন্য আবেদন করতে পারবেন।</p>
+    </div>
+
+    <div class="feature-card card-secure reveal">
+        <div class="icon-large">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3>নিরাপদ প্ল্যাটফর্ম</h3>
+        <p>আপনার অ্যাকাউন্টের তথ্য সুরক্ষিত রাখতে প্রয়োজনীয় নিরাপত্তা ব্যবস্থা।</p>
+    </div>
+
+    <div class="feature-card card-rewards reveal">
+        <div class="icon-large">
+            <i class="fa-solid fa-medal"></i>
+        </div>
+        <h3>রিওয়ার্ড ও বোনাস</h3>
+        <p>যোগ্যতা ও প্রচলিত নিয়ম অনুযায়ী বিভিন্ন রিওয়ার্ড সুবিধা।</p>
+    </div>
+
+    <p class="final-cta-text reveal">
+        🚀 এখনই STRIKE ORA ডাউনলোড করুন!
+    </p>
+
+    <a href="https://www.mediafire.com/file/89e173nuinytdwf/STRIKE_ORA.apk/file"
+       class="final-cta-btn"
+       target="_blank"
+       rel="noopener noreferrer">
+
+        <i class="fa-solid fa-download"></i>
+        Download STRIKE ORA
+
+    </a>
+
+</section>
+
+<!-- Footer -->
+
+<footer class="footer reveal">
+
+    <div class="footer-logo-info">
+
+        <div class="footer-logo-box">
+            <img src="https://i.postimg.cc/3RKVptdN/file-00000000c96482089d39f95d3d14c166.png"
+                 alt="STRIKE ORA Logo">
+        </div>
+
+        <span class="app-name">STRIKE ORA</span>
+
+    </div>
+
+    <p class="copyright-text">
+        © 2026 STRIKE ORA | All Rights Reserved<br>
+        Developed By
+        <a href="https://rhesports.fun/developer.html"
+           target="_blank"
+           rel="noopener noreferrer">
+            DEV STRIKE ORA
+        </a>
+    </p>
+
+</footer>
+
+<script>
+
+// Scroll Reveal Animation
+
+const revealElements = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+            }
+
+        });
+
+    }, {
+        threshold: 0.12
+    });
+
+    revealElements.forEach(element => {
+        observer.observe(element);
+    });
+
+} else {
+
+    revealElements.forEach(element => {
+        element.classList.add('show');
+    });
+
+}
+
+// Download Button Ripple Animation
+
+document.querySelectorAll('.download-btn, .final-cta-btn').forEach(button => {
+
+    button.addEventListener('click', function(event) {
+
+        const rect = this.getBoundingClientRect();
+
+        const size = Math.max(rect.width, rect.height);
+
+        const x = event.clientX - rect.left - size / 2;
+        const y = event.clientY - rect.top - size / 2;
+
+        const ripple = document.createElement('span');
+
+        ripple.className = 'ripple';
+
+        ripple.style.width = size + 'px';
+        ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+
+        this.appendChild(ripple);
+
+        setTimeout(() => {
+            ripple.remove();
+        }, 600);
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
